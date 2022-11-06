@@ -14,9 +14,9 @@ function renderCompany(companyData){
     divCard.setAttribute("class","card")
     divCard.setAttribute("id", companyData.id)
 
-    let h4 = document.createElement("h4")
-    h4.setAttribute("class", "name")
-    h4.innerText= companyData.name
+    let h2 = document.createElement("h2")
+    h2.setAttribute("class", "name")
+    h2.innerText= companyData.name
 
     let img = document.createElement("img")
     img.setAttribute("class","company-logo")
@@ -24,8 +24,8 @@ function renderCompany(companyData){
 
     let p =  document.createElement("p")
     p.setAttribute("class","annual-pay")
-    p.innerText = companyData.annualPay
-    divCard.append(h4,img,p)
+    p.innerText = `Estimated annual pay:${companyData.annualPay}`
+    divCard.append(h2,img,p)
 //console.log(divCard)
 divCollect.append(divCard)
 }
