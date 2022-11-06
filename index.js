@@ -2,7 +2,8 @@
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
     .then((res)=>res.json())
-    .then(data=>renderCompany(data))
+    .then(data=> data.forEach((company)=>{
+        renderCompany(company)}))
 }
 
 //renders company data to HTML
