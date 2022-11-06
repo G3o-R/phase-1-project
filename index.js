@@ -1,3 +1,5 @@
+let divCollect= document.getElementById('company-collection')
+
 //fetches data from API
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
@@ -8,18 +10,24 @@ function fetchCompanies(){
 
 //renders company data to HTML
 function renderCompany(companyData){
-    let companyCard = document.createElement("div")
-    companyCard.setAttribute("class","card")
+    let divCard = document.createElement("div")
+    divCard.setAttribute("class","card")
+    divCard.setAttribute("id", companyData.id)
+
     let h4 = document.createElement("h4")
     h4.setAttribute("class", "name")
+    h4.innerText= companyData.name
+
     let img = document.createElement("img")
-    img.setAttribute("class","Company-Logo")
+    img.setAttribute("class","company-logo")
+    img.setAttribute("src", companyData.logoURL)
+
     let p =  document.createElement("p")
     p.setAttribute("class","annual-pay")
-
-    console.log(companyData.name)
-
-    //h4.innerText()
+    p.innerText = companyData.annualPay
+    divCard.append(h4,img,p)
+//console.log(divCard)
+divCollect.append(divCard)
 }
 
 document.addEventListener("DOMContentLoaded",fetchCompanies())

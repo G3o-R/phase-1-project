@@ -4,35 +4,35 @@
             "id": 1,
             "name": "Google",
             "logoURL": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
-            "AnnualPay": "$134,407"
+            "annualPay": "$134,407"
 
         },
         {
             "id": 2,
             "name": "DoorDash",
             "logoURL": "https://i.pinimg.com/originals/f5/f2/11/f5f2112ee6f926edfc1e3bc7ef4f5487.png",
-            "AnnualPay": "$189,000"
+            "annualPay": "$189,000"
 
         },
         {
             "id": 3,
             "name": "Microsoft",
             "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png",
-            "AnnualPay": "$161,000"
+            "annualPay": "$161,000"
 
         },
         {
             "id": 4,
             "name": "Facebook",
             "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/800px-Facebook_logo_%28square%29.png",
-            "AnnualPay": "$164,000"
+            "annualPay": "$164,000"
 
         },
         {
             "id": 5,
             "name": "TikTok",
             "logoURL": "https://seeklogo.com//images/T/tiktok-app-icon-logo-0F5AD7AE01-seeklogo.com.png",
-            "AnnualPay": "$139,087"
+            "annualPay": "$139,087"
 
         }
     ]
