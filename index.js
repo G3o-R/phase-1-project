@@ -7,7 +7,7 @@ function fetchCompanies(){
 
 //renders company data to HTML
 function renderCompany(companyData){
-    let companyCard = document.createElement(div)
+    let companyCard = document.createElement("div")
     companyCard.setAttribute("class","card")
     let h4 = document.createElement("h4")
     h4.setAttribute("class", "name")
@@ -15,6 +15,10 @@ function renderCompany(companyData){
     img.setAttribute("class","Company-Logo")
     let p =  document.createElement("p")
     p.setAttribute("class","annual-pay")
+
+    console.log(companyData.name)
+
+    //h4.innerText()
 }
 
 document.addEventListener("DOMContentLoaded",fetchCompanies())
