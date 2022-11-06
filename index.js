@@ -15,6 +15,7 @@ function renderCompany(companyData){
     divCard.setAttribute("id", companyData.id)
 
     let h2 = document.createElement("h2")
+    h2.style.cursor = ("pointer")
     h2.setAttribute("class", "name")
     h2.innerText= companyData.name
 
@@ -28,6 +29,14 @@ function renderCompany(companyData){
     divCard.append(h2,img,p)
 //console.log(divCard)
 divCollect.append(divCard)
+
+h2.addEventListener("click",(e)=>{
+    getHackedBro(e.target)
+})
 }
 
 document.addEventListener("DOMContentLoaded",fetchCompanies())
+
+function getHackedBro(event){
+    console.log(event.parentNode.id)
+}
