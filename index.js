@@ -39,11 +39,11 @@ h2.addEventListener("click",(e)=>{
 document.addEventListener("DOMContentLoaded",fetchCompanies())
 
 function getHackedBro(event){
-    let message = [" ","The","Government","Is","After","You"]
+    let message = [" ","This","Is","a","Click","Event"]
     let I = event.parentNode.id
     const h2 = document.getElementById(I)
     h2.innerText = message[I]
-    if(document.getElementById(5).innerText === "You"){
+    if(document.getElementById(5).innerText === "Event"){
         buildSubmit()
         
     }
@@ -78,6 +78,7 @@ function handleSubmit(event){
         //refreshes page
         divCollect.replaceChildren()
         fetchCompanies()
-        alert("aight you're good now lol")
+        alert("That's a submit function")
     }
+    else{alert("Still a submit, but the boolean returned false")}
 }
