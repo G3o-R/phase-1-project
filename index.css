@@ -31,3 +31,7 @@
   .hidden {
     visibility: hidden;
   }
+
+  #clicked-h2 {
+    size: 32;
+  }
