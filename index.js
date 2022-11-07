@@ -43,8 +43,8 @@ function clickHeader(click){
     const h2 = document.getElementById(I)
     fetch(`http://localhost:3000/companies/${I}`)
     .then((res)=>res.json())
-    .then(aboutData => console.log(aboutData))
-    // h2.innerText = message
+    .then(companyData => console.log(companyData.about))
+    h2.innerText = message
     if(document.getElementById(5).innerText === "Event"){
         buildSubmit()
         
