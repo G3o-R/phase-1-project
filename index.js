@@ -1,16 +1,16 @@
 let divCollect= document.getElementById('company-collection')
 const submitForm = document.getElementById("submit")
 
-//fetches data from API
+//fetches company from API
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
     .then((res)=>res.json())
-    .then(data=> data.forEach((company)=>{
+    .then(companyies=> companyies.forEach((company)=>{
         renderCompany(company)}))
 }
 fetchCompanies()
 
-//renders company data to HTML
+//renders company company to HTML
 function renderCompany(companyData){
     let divCard = document.createElement("div")
     divCard.setAttribute("class","card")
@@ -36,22 +36,26 @@ h2.addEventListener("click",clickHeader)
 p.addEventListener("mouseover",displayHighestPaid)
 }
 
+//WORK ON THIS--------------------------------------------------------------------------------
 function clickHeader(click){
-    let message = [" ","This","Is","a","Click","Event"]
     let I = click.target.parentNode.id
+    console.log(I)
     const h2 = document.getElementById(I)
-    h2.innerText = message[I]
+    fetch(`http://localhost:3000/companies/${I}`)
+    .then((res)=>res.json())
+    .then(aboutData => console.log(aboutData))
+    // h2.innerText = message
     if(document.getElementById(5).innerText === "Event"){
         buildSubmit()
         
     }
 }
-
+//------------------------------------------------------------------------------------------------
 function displayHighestPaid(text){
     let I = text.target.parentNode.id
     fetch(`http://localhost:3000/companies/${I}`)
     .then((res)=>res.json())
-    .then(data=>alert(`THE TOP PAID SOFTWARE ENGINEERS MAKE ${data.topPaid}!`))
+    .then(company=>alert(`THE TOP PAID SOFTWARE ENGINEERS ${company.name} MAKE ${company.topPaid}!`))
 }
 
 function buildSubmit(){
