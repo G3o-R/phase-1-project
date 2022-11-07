@@ -27,7 +27,7 @@ function renderCompany(companyData){
 
     let p =  document.createElement("p")
     p.setAttribute("class","annual-pay")
-    p.innerText = `Estimated annual pay:${companyData.annualPay}`
+    p.innerText = `Estimated annual pay: ${companyData.annualPay}`
     divCard.append(h2,img,p)
 //console.log(divCard)
 divCollect.append(divCard)
@@ -47,7 +47,12 @@ function clickHeader(click){
     }
 }
 
-function displayHighestPaid(){}
+function displayHighestPaid(text){
+    let I = text.target.parentNode.id
+    fetch(`http://localhost:3000/companies/${I}`)
+    .then((res)=>res.json())
+    .then(data=>alert(`THE TOP PAID SOFTWARE ENGINEERS MAKE ${data.topPaid}!`))
+}
 
 function buildSubmit(){
     const divSubmit = document.createElement('div')
