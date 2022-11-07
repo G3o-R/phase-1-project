@@ -18,4 +18,4 @@ Credit to [professor-ben](https://github.com/professor-ben) for the css code use
 }
 ```
 Final Product:
-[Project GIF](https://im3.ezgif.com/tmp/ezgif-3-e6befd3d12.gif)
+![Project GIF](https://im3.ezgif.com/tmp/ezgif-3-e6befd3d12.gif)
