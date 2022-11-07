@@ -31,16 +31,14 @@ function renderCompany(companyData){
 //console.log(divCard)
 divCollect.append(divCard)
 
-h2.addEventListener("click",(e)=>{
-    clickHeader(e.target)
-})
+h2.addEventListener("click",clickHeader)
 }
 
-document.addEventListener("DOMContentLoaded",fetchCompanies())
+fetchCompanies()
 
-function clickHeader(event){
+function clickHeader(click){
     let message = [" ","This","Is","a","Click","Event"]
-    let I = event.parentNode.id
+    let I = click.target.parentNode.id
     const h2 = document.getElementById(I)
     h2.innerText = message[I]
     if(document.getElementById(5).innerText === "Event"){
