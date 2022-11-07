@@ -1,6 +1,8 @@
 let divCollect= document.getElementById('company-collection')
 const submitForm = document.getElementById("submit")
 
+document.addEventListener("DOMContentLoaded",fetchCompanies )
+
 //fetches data from API
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
@@ -34,8 +36,6 @@ divCollect.append(divCard)
 h2.addEventListener("click",clickHeader)
 }
 
-fetchCompanies()
-
 function clickHeader(click){
     let message = [" ","This","Is","a","Click","Event"]
     let I = click.target.parentNode.id
@@ -63,16 +63,15 @@ function buildSubmit(){
     divSubmit.append(form)
     divCollect.append(divSubmit)
 
-    form.addEventListener("submit",(e)=> {
-        e.preventDefault()
-        handleSubmit(e.target)
-    })
+    form.addEventListener("submit",handleSubmit)
     
 }
 
-function handleSubmit(event){
-    let input = event.password.value
-    if(input === "0451"){
+function handleSubmit(input){
+    input.preventDefault()
+    let key = input.target.password.value
+    console.log(key)
+    if(key === "0451"){
         //refreshes page
         divCollect.replaceChildren()
         fetchCompanies()
@@ -80,3 +79,4 @@ function handleSubmit(event){
     }
     else{alert("Still a submit, but the boolean returned false")}
 }
+
