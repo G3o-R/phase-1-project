@@ -39,16 +39,17 @@ p.addEventListener("mouseover",displayHighestPaid)
 //WORK ON THIS--------------------------------------------------------------------------------
 function clickHeader(click){
     let I = click.target.parentNode.id
-    console.log(I)
     const h2 = document.getElementById(I)
     fetch(`http://localhost:3000/companies/${I}`)
     .then((res)=>res.json())
-    .then(companyData => console.log(companyData.about))
-    h2.innerText = message
-    if(document.getElementById(5).innerText === "Event"){
-        buildSubmit()
-        
-    }
+    .then(companyData => {
+        let message = companyData.about
+        h2.innerText = message
+        if(I === "7"){
+            alert("enter 0451 in order to reset the information")
+            buildSubmit()
+        }
+        })
 }
 //------------------------------------------------------------------------------------------------
 function displayHighestPaid(text){
