@@ -44,17 +44,39 @@ function getHackedBro(event){
     const h2 = document.getElementById(I)
     h2.innerText = message[I]
     if(document.getElementById(5).innerText === "You"){
-        submitForm.classList.remove("hidden")
-        submitForm.addEventListener("submit", (e)=>{
-            e.preventDefault()
-            handlePassword(e)})
+        buildSubmit()
+        
     }
+}
+
+function buildSubmit(){
+    const divSubmit = document.createElement('div')
+    const form = document.createElement('form')
+    form.setAttribute("id","submit-form")
+    
+    const passWordInput = document.createElement("input")
+    passWordInput.setAttribute("id","password")
+    passWordInput.setAttribute("placeholder","Enter Password...")
+
+    const btn = document.createElement("button")
+    btn.innerText = "ENTER"
+
+    form.append(passWordInput,btn)
+    divSubmit.append(form)
+    divCollect.append(divSubmit)
+
+    form.addEventListener("submit",(e)=> {
+        e.preventDefault()
+        handleSubmit(e.target)
+    })
     
 }
 
-function handlePassword(e){
-  
-
-    console.log(e.target.value)
-    console.log("beep")
+function handleSubmit(event){
+    let input = event.password.value
+    if(input === "0451"){
+        divCollect.replace("")
+        fetchCompanies()
+        alert("aight you're good now lol")
+    }
 }
