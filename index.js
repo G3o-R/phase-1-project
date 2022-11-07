@@ -32,13 +32,13 @@ function renderCompany(companyData){
 divCollect.append(divCard)
 
 h2.addEventListener("click",(e)=>{
-    getHackedBro(e.target)
+    clickHeader(e.target)
 })
 }
 
 document.addEventListener("DOMContentLoaded",fetchCompanies())
 
-function getHackedBro(event){
+function clickHeader(event){
     let message = [" ","This","Is","a","Click","Event"]
     let I = event.parentNode.id
     const h2 = document.getElementById(I)
