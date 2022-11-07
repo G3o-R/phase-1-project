@@ -75,7 +75,8 @@ function buildSubmit(){
 function handleSubmit(event){
     let input = event.password.value
     if(input === "0451"){
-        divCollect.replace("")
+        //refreshes page
+        divCollect.replaceChildren()
         fetchCompanies()
         alert("aight you're good now lol")
     }
