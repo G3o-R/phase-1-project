@@ -19,3 +19,8 @@ Credit to [professor-ben](https://github.com/professor-ben) for the css code use
 ```
 Final Product:
 ![Project GIF](https://im3.ezgif.com/tmp/ezgif-3-e6befd3d12.gif)
+
+### Backend Summary
+The page loads using a "DOMContentLoaded" event, in order to give the DOM enough time to load the HTML, which makes a call back function to "fetchCompanies()"
+###### fetchCompanies()
+makes a fetch request to "http://localhost:3000/Companies" and recieves the raw data from my data base for the renderCompany() callBack to use
