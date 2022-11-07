@@ -4,35 +4,56 @@
             "id": 1,
             "name": "Google",
             "logoURL": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
-            "annualPay": "$134,407"
+            "annualPay": "$134,407",
+            "topPaid": "$1-1.27 Million (at level 8)"
 
         },
         {
             "id": 2,
             "name": "DoorDash",
             "logoURL": "https://i.pinimg.com/originals/f5/f2/11/f5f2112ee6f926edfc1e3bc7ef4f5487.png",
-            "annualPay": "$189,000"
+            "annualPay": "$189,000",
+            "topPaid": "$203,959"
 
         },
         {
             "id": 3,
             "name": "Microsoft",
             "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png",
-            "annualPay": "$161,000"
+            "annualPay": "$161,000",
+            "topPaid": "+$172,000"
 
         },
         {
             "id": 4,
             "name": "Facebook",
             "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/800px-Facebook_logo_%28square%29.png",
-            "annualPay": "$164,000"
+            "annualPay": "$164,000",
+            "topPaid": "$200,000"
 
         },
         {
             "id": 5,
             "name": "TikTok",
             "logoURL": "https://seeklogo.com//images/T/tiktok-app-icon-logo-0F5AD7AE01-seeklogo.com.png",
-            "annualPay": "$139,087"
+            "annualPay": "$139,087",
+            "topPaid": "+$200,000"
+
+        },
+        {
+            "id": 6,
+            "name": "YouTube",
+            "logoURL": "https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg",
+            "annualPay": "$110,000",
+            "topPaid": "$170,000"
+
+        },
+        {
+            "id": 7,
+            "name": "Flatiron",
+            "logoURL": "data:image/png;base64,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",
+            "annualPay": "$135,000",
+            "topPaid": "+$220,000"
 
         }
     ]

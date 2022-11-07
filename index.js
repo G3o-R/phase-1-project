@@ -1,8 +1,6 @@
 let divCollect= document.getElementById('company-collection')
 const submitForm = document.getElementById("submit")
 
-document.addEventListener("DOMContentLoaded",fetchCompanies )
-
 //fetches data from API
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
@@ -10,6 +8,7 @@ function fetchCompanies(){
     .then(data=> data.forEach((company)=>{
         renderCompany(company)}))
 }
+fetchCompanies()
 
 //renders company data to HTML
 function renderCompany(companyData){
@@ -34,6 +33,7 @@ function renderCompany(companyData){
 divCollect.append(divCard)
 
 h2.addEventListener("click",clickHeader)
+p.addEventListener("mouseover",displayHighestPaid)
 }
 
 function clickHeader(click){
@@ -46,6 +46,8 @@ function clickHeader(click){
         
     }
 }
+
+function displayHighestPaid(){}
 
 function buildSubmit(){
     const divSubmit = document.createElement('div')
