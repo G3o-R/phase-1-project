@@ -1,3 +1,3 @@
-#Phase One Project
+# Phase One Project
 
-###Companies I'd like to work at
+### Companies I'd like to work at
