@@ -5,8 +5,7 @@ const submitForm = document.getElementById("submit")
 function fetchCompanies(){
     fetch("http://localhost:3000/Companies")
     .then((res)=>res.json())
-    .then(companyies=> companyies.forEach((company)=>{
-        renderCompany(company)}))
+    .then(companies=> companies.forEach((company)=>{renderCompany(company)}))
 }
 fetchCompanies()
 
@@ -30,22 +29,22 @@ function renderCompany(companyData){
     p.innerText = `Estimated annual pay: ${companyData.annualPay}`
     divCard.append(h2,img,p)
 //console.log(divCard)
-divCollect.append(divCard)
+    divCollect.append(divCard)
 
-h2.addEventListener("click",clickHeader)
-p.addEventListener("mouseover",displayHighestPaid)
+    h2.addEventListener("click",clickHeader)
+    p.addEventListener("mouseover",displayHighestPaid)
 }
 
 //WORK ON THIS--------------------------------------------------------------------------------
 function clickHeader(click){
-    let I = click.target.parentNode.id
-    const h2 = document.getElementById(I)
-    fetch(`http://localhost:3000/companies/${I}`)
+    let companyID = click.target.parentNode.id
+    const h2 = document.getElementById(companyID)
+    fetch(`http://localhost:3000/companies/${companyID}`)
     .then((res)=>res.json())
     .then(companyData => {
         let message = companyData.about
         h2.innerText = message
-        if(I === "7"){
+        if(companyID === "7"){
             alert("enter 0451 in order to reset the information")
             buildSubmit()
         }
@@ -53,8 +52,8 @@ function clickHeader(click){
 }
 //------------------------------------------------------------------------------------------------
 function displayHighestPaid(text){
-    let I = text.target.parentNode.id
-    fetch(`http://localhost:3000/companies/${I}`)
+    let companyID = text.target.parentNode.id
+    fetch(`http://localhost:3000/companies/${companyID}`)
     .then((res)=>res.json())
     .then(company=>alert(`THE TOP PAID SOFTWARE ENGINEERS ${company.name} MAKE ${company.topPaid}!`))
 }
