@@ -1,26 +1,4 @@
-# Phase One Project
+#Phase 1 Project
 
-### Introduction
-
-The frontend is a fairly simple website build. Five *cards* which display the *name* of a given tech company, it's *logo*, and lastly it's *annual entry pay*. 
-
-Credit to [professor-ben](https://github.com/professor-ben) for the css code used to make the cards, however modified:
-```
-.card {
-  text-align: center;
-  border: grey solid 1px;
-  padding: 1rem;
-  width: 15rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 3px 4px #e04b52
-}
-```
-Final Product:
-![Project GIF](https://im3.ezgif.com/tmp/ezgif-3-e6befd3d12.gif)
-
-### Backend Summary
-The page loads using a "DOMContentLoaded" event, in order to give the DOM enough time to load the HTML, which makes a call back function to "fetchCompanies()"
-###### fetchCompanies()
-makes a fetch request to "http://localhost:3000/Companies" and recieves the raw data from my data base for the renderCompany() callBack to use
+A fairly simple front-end that displays salary information and history of the company
+![Project Gif](https://im4.ezgif.com/tmp/ezgif-4-38e6aa92ea.gif)
