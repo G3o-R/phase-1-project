@@ -44,6 +44,10 @@ function renderCompany(companyData){
 function clickHeader(companyData){
     let card  = document.getElementById(companyData.id)
     card.innerText = companyData.about
+    if(companyData.id ===7){
+        setTimeout(function(){alert("enter 0451 in order to reset information")},1000)
+        buildSubmit()
+    }
     }
 //------------------------------------------------------------------------------------------------
 function displayHighestPaid(companyData){
@@ -78,7 +82,7 @@ function handleSubmit(input){
         //refreshes page
         divCollect.replaceChildren()
         fetchCompanies()
-        alert("That's a submit function")
+        alert("Cards reset*")
     }
     else{alert("Still a submit, but the boolean returned false")}
 }
