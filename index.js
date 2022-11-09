@@ -3,11 +3,15 @@ const submitForm = document.getElementById("submit")
 
 //fetches company from API
 function fetchCompanies(){
+    
     fetch("http://localhost:3000/Companies")
     .then((res)=>res.json())
-    .then(companies=> companies.forEach((company)=>{renderCompany(company)}))
-}
+    .then(companies=> companies.forEach((companyObj)=>{
+        renderCompany(companyObj)
+    }))}
+
 fetchCompanies()
+
 
 //renders company company to HTML
 function renderCompany(companyData){
@@ -19,6 +23,7 @@ function renderCompany(companyData){
     h2.style.cursor = ("pointer")
     h2.setAttribute("class", "name")
     h2.innerText= companyData.name
+    console.log(h2)
 
     let img = document.createElement("img")
     img.setAttribute("class","company-logo")
@@ -31,25 +36,18 @@ function renderCompany(companyData){
 //console.log(divCard)
     divCollect.append(divCard)
 
-    h2.addEventListener("click",clickHeader)
+    h2.addEventListener("click", function (){clickHeader(companyData)})
+    //h2.addEventListener("click",clickHeader)
     p.addEventListener("mouseover",displayHighestPaid)
 }
 
 //WORK ON THIS--------------------------------------------------------------------------------
-function clickHeader(click){
-    let companyID = click.target.parentNode.id
-    const h2 = document.getElementById(companyID)
-    fetch(`http://localhost:3000/companies/${companyID}`)
-    .then((res)=>res.json())
-    .then(companyData => {
-        let message = companyData.about
-        h2.innerText = message
-        if(companyID === "7"){
-            alert("enter 0451 in order to reset the information")
-            buildSubmit()
-        }
-        })
-}
+
+function clickHeader(companyData){
+    let card  = document.getElementById(companyData.id)
+    card.innerText = companyData.about
+    console.log(card)
+    }
 //------------------------------------------------------------------------------------------------
 function displayHighestPaid(text){
     let companyID = text.target.parentNode.id
